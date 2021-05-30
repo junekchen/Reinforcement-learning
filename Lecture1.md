@@ -92,11 +92,37 @@ An RL agent may include one or more of these componments
 A map from state to action
 
 Deterministic policy: $a=\pi(s)$
+
 Stochastic policy: $\pi(a|s)=P[A_t=a|S_t=s]$
 
 ### Value function: a prediction of future reward
 Used to evaluate the goodness/badness of states and then to select between actions
 $$
-v_\pi
+v_\pi(s)= E_\pi[R_{t+1}+\gammaR_{t+2}+\gamma^2R_{t+3}+...|St=s]
 $$
 
+### Model: predicts what the environment will do next
+P predicts the next state
+
+R predicts the next (immediate) reward
+
+### Categorizing RL agents
+- Value based: No policy; value func
+- Policy based: Policy; no value func
+- Actor Critic: Policy; Value function
+- Model free: Policy and/or Value func; no model
+- Model based: Policy and/or value func; model
+
+# Problems within RL
+
+## learning and planning
+two fundamental problems in sequential decision making
+1. reinforcement learning
+- env is initially unknown
+- agent interacts with the env
+- agent improves its policy
+2. planning
+- model of env is know
+- agent performs computations with its model (without any external interaction)
+- agent improves its policy
+- aka deliberation, reasoning, introspection, pondering, thought, search

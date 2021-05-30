@@ -9,16 +9,72 @@ Reinforcement learning is a branch of machine learning (other 2: supervised & un
 - Agent’s actions affect the subsequent data it receives (?)
 
 ## Rewards
-A reward R_t is a scalar feedback signal
+A reward $R_t$ is a scalar feedback signal
+
 Indicates how well agent is doing at step t
+
 The agent’s job is to maximize cumulative reward
 
 Reward hypothesis: all goals can be described by the maximization of expected cumulative reward
 
-Sequential decision making
+## Sequential decision making
 Goal: select actions to maximize total future reward
+
 Actions may have long term consequences
+
 Reward may be delayed
+
 It may be better to sacrifice immediate reward to gain more long-term reward
 
-$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
+At each step t the agent:
+- executes action $A_t$
+- receives observation $O_t$
+- receives scalar reward $R_t$
+
+The environment:
+- receives action $A_t$
+- emits observation $O_{t+1}$
+- emits scalar reward $R_{t+1}$
+
+## History and State
+**History** is the sequence of observations, actions. rewards
+
+What happens next depends on the history
+- the agent selects actions
+- the environment selects observations/rewards
+
+**State** is the info used to determine what happens next
+$$
+S_t = f(H_t)
+$$
+
+### Environment State $S_t^e$: environment's private representation
+whatever data the environment uses to pick the next ovservation/reward
+
+not usually visible to the agent
+
+### Agent State $S_t^a$: agent's internal representation
+whatever information the agent uses to pick the next action
+
+it is the info used by reinforcement learning algorithms
+
+### Information State (Markov State)
+Definition: A state $S_t$ is **Markov** if and only if $P[S_{t+1}|S_t] = P[S_{t+1}|S_1,...,S_t]$
+- The future is independent of the past giventhe present
+- The state is a sufficient statistic of the future
+- The environment state and history are Markov
+
+#### Fully observable environments: Markov decision process (MDP)
+Full observability: agent directly observes environment state
+
+Agent state = Environment State = Information State
+
+#### Partially observable environments: partially observale Markov decision process (POMDP)
+Partial observability: agent **indirectly** observes environment
+
+agent state not equal to environment state
+
+Agent must construct its own state representation $S_t^a$
+- Complete history $S_t^a = H_t$
+- Beliefs
+

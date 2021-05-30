@@ -1,13 +1,14 @@
+# Introduciton to RL
 
 Reinforcement learning is a branch of machine learning (other 2: supervised & unsupervised)
 
-Difference:
-No supervisor, a reward signal
-No instantaneous feedback
-Sequential/ time series data
-Agent’s actions affect the subsequent data it receives (?)
+## Difference with other machine learning methods
+- No supervisor, a reward signal
+- No instantaneous feedback
+- Sequential/ time series data
+- Agent’s actions affect the subsequent data it receives (?)
 
-Rewards
+## Rewards
 A reward R_t is a scalar feedback signal
 Indicates how well agent is doing at step t
 The agent’s job is to maximize cumulative reward
@@ -19,4 +20,3 @@ Goal: select actions to maximize total future reward
 Actions may have long term consequences
 Reward may be delayed
 It may be better to sacrifice immediate reward to gain more long-term reward
-

@@ -98,7 +98,7 @@ Stochastic policy: $\pi(a|s)=P[A_t=a|S_t=s]$
 ### Value function: a prediction of future reward
 Used to evaluate the goodness/badness of states and then to select between actions
 $$
-v_\pi(s)= E_\pi[R_{t+1}+\gammaR_{t+2}+\gamma^2R_{t+3}+...|St=s]
+v_\pi(s)= E_\pi[R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+...|St=s]
 $$
 
 ### Model: predicts what the environment will do next

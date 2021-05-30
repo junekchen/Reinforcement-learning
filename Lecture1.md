@@ -76,5 +76,27 @@ agent state not equal to environment state
 
 Agent must construct its own state representation $S_t^a$
 - Complete history $S_t^a = H_t$
-- Beliefs
+- Beliefs of environment state: $S_t^a = (P[A_t^e=s^1],...,P[S_t^e= s^n])$
+- Recurent neural network: $S_t^a=\sigma(S_{t-1}^aW_s+O_tW_o)$
+
+# Inside an RL Agent
+
+## Major Components of an RL Agent
+
+An RL agent may include one or more of these componments
+- Policy: agent's behavior function
+- Value function: how good is each state and/or action
+- Model: agent's representation of the environment
+
+### Policy: agent's behavior
+A map from state to action
+
+Deterministic policy: $a=\pi(s)$
+Stochastic policy: $\pi(a|s)=P[A_t=a|S_t=s]$
+
+### Value function: a prediction of future reward
+Used to evaluate the goodness/badness of states and then to select between actions
+$$
+v_\pi
+$$
 

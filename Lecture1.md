@@ -20,3 +20,7 @@ Goal: select actions to maximize total future reward
 Actions may have long term consequences
 Reward may be delayed
 It may be better to sacrifice immediate reward to gain more long-term reward
+
+$$
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
